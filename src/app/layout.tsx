@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ThemeProvider from '@/components/client/ThemeProvider'
 
 export const metadata: Metadata = {
   title: 'Assetron',
@@ -12,7 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body style={{ margin: 0, padding: 0 }}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
